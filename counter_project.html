@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="p-20 bg-[Cornsilk]">
+    <div class="flex flex-col gap-5  px-[90px] py-[90px]">
+      <h1 class="font-bold text-[40px] text-center">COUNTER</h1>
+      <p id="count" class="text-center text-[30px]">0</p>
+      <div class="flex gap-5 justify-center">
+        <button id="dec" class="px-2 py-3 rounded-xl bg-[pink]">
+          DECREASE
+        </button>
+        <button id="res" class="px-2 py-3 rounded-xl bg-[pink]">RESET</button>
+        <button id="inc" class="px-2 py-3 rounded-xl bg-[pink]">
+          INCREASE
+        </button>
+      </div>
+    </div>
+
+    <script>
+      var decrease = document.getElementById("dec");
+      var reset = document.getElementById("res");
+      var increase = document.getElementById("inc");
+      console.dir(count);
+
+      // increase
+      inc.addEventListener("click", () => {
+        count.textContent = parseInt(count.textContent) + 1;
+        count.style.color = "green";
+      });
+
+      // decrease
+      dec.addEventListener("click", () => {
+        count.textContent = parseInt(count.textContent) - 1;
+        count.style.color = "red";
+      });
+
+      // reset
+      res.addEventListener("click", () => {
+        count.textContent = 0;
+        count.style.color = "black";
+      });
+    </script>
+  </body>
+</html>
