@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schedule</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="w-full h-screen flex flex-col justify-center gap-4">
+      <div class="flex flex-col items-center gap-3">
+        <h1 class="font-bold text-center text-4xl">Schedule</h1>
+        <p id="count" class="font-medium text-center text-3xl">0</p>
+        <div class="flex gap-3">
+          <button
+            id="start"
+            class="py-4 px-3 rounded-lg bg-green-700 text-white"
+          >
+            Start
+          </button>
+          <button id="stop" class="py-4 px-3 rounded-lg bg-red-700 text-white">
+            Stop
+          </button>
+          <button id="time" class="py-4 px-3 rounded-lg bg-blue-700 text-white">
+            Timer
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var count = document.getElementById("count");
+      var start = document.getElementById("start");
+      var stop = document.getElementById("stop");
+      var time = document.getElementById("time");
+
+      var clear;
+      start.addEventListener("click", () => {
+        clear = setInterval(() => {
+          count.textContent = parseInt(count.textContent) + 1;
+        }, 1000);
+      });
+
+      stop.addEventListener("click", () => {
+        clearInterval(clear);
+      });
+
+      time.addEventListener("click", () => {
+        setTimeout(() => {
+          alert("time out");
+          clearInterval(clear);
+        }, 6000);
+      });
+    </script>
+  </body>
+</html>
