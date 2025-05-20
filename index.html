@@ -66,11 +66,11 @@
           return;
         }
 
-        // If all good, submit
+        // Form submit
         document.getElementById("passwordForm").submit();
       }
 
-      // Just these two lines to add blur validation
+      // Add blur validation
       document.getElementById("newPassword").onblur = () => {
         document.getElementById("errorNew").textContent =
           document.getElementById("newPassword").value ? "" : "Required*";
